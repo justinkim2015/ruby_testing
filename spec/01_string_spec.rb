@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rspec spec/01_string_spec.rb
+
 describe String do
   # Let creates a helper method with a memoized value that is cached for the
   # same example but not across different examples. Let is lazy-evaluated;
@@ -39,18 +41,19 @@ end
 
 describe String do
   # Create a let variable that will pass the first test.
+  let(:favorite_food) { String.new('tacos')}
 
   # remove the 'x' before running this test
-  xit 'is equal to tacos' do
+  it 'is equal to tacos' do
     expect(favorite_food).to eq('tacos')
   end
 
   # remove the 'x' before running this test
   context 'when favorite food is updated' do
-    # Change the favorite_food let variable.
+    let(:favorite_food) {String.new('gyudon')}
 
-    xit 'updates the favorite food' do
-      # Write a test that will pass.
+    it 'updates the favorite food' do
+      expect(favorite_food).to eq('gyudon')
     end
   end
 end
