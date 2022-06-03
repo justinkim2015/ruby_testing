@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# rspec spec/02_array_spec.rb
 
 describe Array do
   # An implicitly defined 'subject' is available when the outermost example
@@ -24,7 +25,7 @@ describe Array do
 
   context 'when using predicate matchers' do
     context 'when using the empty? predicate method' do
-      # A predicate method in Ruby ends with a ? and only returns true or false. 
+      # A predicate method in Ruby ends with a ? and only returns true or false.  
       it 'returns true' do
         expect(subject.empty?).to eq true
       end
@@ -72,27 +73,28 @@ end
 describe Array do
   context 'when updating an implicit subject' do
     # remove the 'x' before running this test
-    xit 'is empty' do
-      # Write a test to expect the subject to be empty.
+    it 'is empty' do
+      expect(subject).to be_empty
     end
 
     # remove the 'x' before running this test
-    xit 'updates length to 1' do
+    it 'updates length to 1' do
       # Update the implicit subject to make this test pass.
+      subject = [1]
       expect(subject.length).to eq(1)
     end
   end
 
   context 'when using one let variable on two tests' do
     # Make a let variable that will pass both tests.
-
+    let(:lucky_numbers) { [14, 14, 14] }
     # remove the 'x' before running this test
-    xit 'has length of 3' do
+    it 'has length of 3' do
       expect(lucky_numbers.length).to eq(3)
     end
 
     # remove the 'x' before running this test
-    xit 'has sum of 42' do
+    it 'has sum of 42' do
       expect(lucky_numbers.sum).to eq(42)
     end
   end
