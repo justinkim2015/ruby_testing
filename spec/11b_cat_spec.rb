@@ -35,17 +35,22 @@ end
 
 describe Cat do
   # Create a subject with your choice of cat name and optional breed/color.
-
+  subject(:fold) { described_class.new('poop', 'fold', 'grey')}
   # Write a test using the second shared_example to test that cat responds to
   # talk ('meow').
-  context '' do
+  context 'when .talk is called' do
+    it "says meow" do
+      expect(fold.talk).to eq('meow')
+    end 
   end
 
   # remove the 'x' before running this test
-  xit 'is not hungry' do
+  it 'is not hungry' do
+    expect(fold).not_to be_hungry
   end
 
   # remove the 'x' before running this test
-  xit 'is hiding' do
+  it 'is hiding' do
+    expect(fold).to be_hiding
   end
 end
