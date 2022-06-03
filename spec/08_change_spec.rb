@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# rspec spec/08_change_spec.rb
 
 describe Array do
   subject(:drinks) { %w[coffee tea water] }
@@ -55,15 +56,18 @@ describe 'lucky numbers with rotate! method' do
 
   context 'when rotating the array of lucky numbers' do
     # remove the 'x' before running this test
-    xit 'will change the first value to 7' do
+    it 'will change the first value to 7' do
+      expect { lucky_numbers.rotate!(1) }.to change { lucky_numbers[0] }.to be(7) 
     end
 
     # remove the 'x' before running this test
-    xit 'will change the last value to 3' do
+    it 'will change the last value to 3' do
+      expect { lucky_numbers.rotate!(1) }.to change { lucky_numbers[-1] }.to be(3) 
     end
 
     # remove the 'x' before running this test
-    xit 'will change the first value to 7 and last value to 3' do
+    it 'will change the first value to 7 and last value to 3' do
+      expect { lucky_numbers.rotate!(1) }.to change { lucky_numbers[-1] }.to be(3) and change { lucky_numbers[0] }.to be(7) 
     end
   end
 end
