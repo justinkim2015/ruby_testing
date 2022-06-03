@@ -2,6 +2,7 @@
 
 # The 'all' matcher and the 'contain_exactly' matcher each look at every
 # item in 'numbers'.
+# rspec spec/07_all_contain_exactly_spec.rb
 
 describe Array do
   subject(:numbers) { [11, 17, 21] }
@@ -79,10 +80,12 @@ describe Array do
   # Write a test that expresses each of the following statements.
 
   # remove the 'x' before running this test
-  xit 'includes 21 and ends with 89' do
+  it 'includes 21 and ends with 89' do
+    expect(fibonacci_sequence).to include(21) and end_with(89)
   end
 
   # remove the 'x' before running this test
-  xit 'starts with 0, 1, 1, 2 and all are under 100' do
+  it 'starts with 0, 1, 1, 2 and all are under 100' do
+    expect(fibonacci_sequence).to start_with(0, 1, 1, 2) and be > 100
   end
 end
