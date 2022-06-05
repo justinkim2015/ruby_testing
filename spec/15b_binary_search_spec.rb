@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# rspec spec/15b_binary_search_spec.rb
 
 require_relative '../lib/15b_binary_search'
 require_relative '../lib/15c_random_number'
